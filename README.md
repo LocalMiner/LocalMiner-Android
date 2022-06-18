@@ -2,7 +2,7 @@
 🔴 Host Minecraft Java Edition Server From Your Android Phone!
 
 # Steps
-1. Download Termux from F-Droid (not Google Play Store, that version is outdated and does not have openjdk-17 in Termux directly and have to go through Ubuntu)
+1. Download [Termux](https://www.apkmirror.com/apk/fredrik-fornwall/termux-fdroid-version/termux-fdroid-version-0-118-0-release/termux-fdroid-version-0-118-0-android-apk-download/download/) (not Google Play Store, that version is outdated and does not have openjdk-17 in Termux directly and have to go through Ubuntu)
 
 2.  run this
 ```
@@ -33,4 +33,4 @@ Run pkg install wget -y && wget https://raw.githubusercontent.com/LocalMiner/Loc
 
 4. Copy the URL in ngrok and use it as server URL in Minecraft, it should look something like x.tcp.ngrok.io:xxxxx, don't copy the tcp:// prefix
 
-5. In the notifications, find Termux and click Acquire Wakelock (might have to expand that notification), this stops Android from killing Termux after a while. You can also run termux-wake-lock which does the same thing.
+### 5. In the notifications, find Termux and click Acquire Wakelock (might have to expand that notification), this stops Android from killing Termux after a while. You can also run termux-wake-lock which does the same thing.
