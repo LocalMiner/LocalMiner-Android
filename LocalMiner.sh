@@ -77,7 +77,7 @@ if [ "$USE_NGROK" = "yes" ] ; then
   echo "STATUS: setting up ngrok"
   cd ..
   wget -O ngrok.zip https://github.com/LocalMiner/CloudLibrary/releases/download/1.0/ngrok.zip && unzip ngrok.zip && chmod +x ngrok
-  echo "./ngrok tcp -region=$NGROK_REGION 25565" > n.sh
+  echo "./ngrok tcp --region=$NGROK_REGION 25565" > n.sh
   chmod +x n.sh
   ./ngrok authtoken $AUTHTOKEN
 fi
