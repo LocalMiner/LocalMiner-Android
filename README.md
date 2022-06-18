@@ -34,3 +34,6 @@ pkg install wget -y && wget https://raw.githubusercontent.com/LocalMiner/LocalMi
 4. Copy the URL in ngrok and use it as server URL in Minecraft, it should look something like x.tcp.ngrok.io:xxxxx, don't copy the tcp:// prefix
 
 ### 5. In the notifications, find Termux and click Acquire Wakelock (might have to expand that notification), this stops Android from killing Termux after a while. You can also run termux-wake-lock which does the same thing.
+
+##### if any wget errors
+https://www.youtube.com/watch?v=TOCpfccvEvM
