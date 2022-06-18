@@ -60,22 +60,22 @@ if [ "$USE_Paper" = "yes" ] ; then
   java -jar $installer_jar --installServer
   # mv $exec_jar $EXEC_SERVER_NAME
   # rm $installer_jar
-  echo "cd mc && ./run.sh" > ../m
+  echo "cd mc && ./run.sh" > ../m.sh
 else
   wget -O $EXEC_SERVER_NAME $VANILLA_SERVER
-  echo "cd mc && java -Xmx1G -jar ${EXEC_SERVER_NAME} nogui" > ../m
+  echo "cd mc && java -Xmx1G -jar ${EXEC_SERVER_NAME} nogui" > ../m.sh
 fi
-chmod +x ../m
+chmod +x ../m.sh
 
 # ngrok download and setup
 if [ "$USE_NGROK" = "yes" ] ; then
   echo "STATUS: setting up ngrok"
   cd ..
   wget -O ngrok.zip https://bin.equinox.io/a/e93TBaoFgZw/ngrok-2.2.8-linux-arm.zip && unzip ngrok.zip && chmod +x ngrok
-  echo "./ngrok tcp -region=$NGROK_REGION 25565" > n
-  chmod +x n
+  echo "./ngrok tcp -region=$NGROK_REGION 25565" > n.sh
+  chmod +x n.sh
   ./ngrok authtoken $AUTHTOKEN
 fi
 
 
-echo "STATUS: installation complete! Run ./m here to start minecraft server, open a new session by swiping on the left, and run ./n there to start ngrok"
+echo "STATUS: installation complete! Run ./m.sh here to start minecraft server, open a new session by swiping on the left, and run ./n.sh there to start ngrok"
