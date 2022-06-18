@@ -6,7 +6,7 @@
 
 2.  run this
 ```
-Run pkg install wget -y && wget https://raw.githubusercontent.com/LocalMiner/LocalMiner-Android/main/LocalMiner.sh && bash LocalMiner.sh 
+pkg install wget -y && wget https://raw.githubusercontent.com/LocalMiner/LocalMiner-Android/main/LocalMiner.sh && bash LocalMiner.sh 
 ```
 
 3. This runs a bash script, and there are a few options that you should think about (you can also leave blank to use default option if there is one):
