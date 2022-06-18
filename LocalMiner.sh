@@ -55,8 +55,8 @@ pkg install openjdk-17 zip unzip -y
 
 # minecraft server download and setup
 echo "STATUS: setting up Minecraft Server"
-mkdir mc
-cd mc
+mkdir LocalMiner
+cd LocalMiner
 echo "eula=true" > eula.txt
 if [ "$USE_Paper" = "yes" ] ; then
   wget $Paper_SERVER
@@ -65,10 +65,10 @@ if [ "$USE_Paper" = "yes" ] ; then
   java -jar $installer_jar --installServer
   # mv $exec_jar $EXEC_SERVER_NAME
   # rm $installer_jar
-  echo "cd mc && java -Xmx1G -jar paper-1.18.2-379 nogui" > ../m.sh
+  echo "cd LocalMiner && java -Xmx1G -jar paper-1.18.2-379 nogui" > ../m.sh
 else
   wget -O $EXEC_SERVER_NAME $VANILLA_SERVER
-  echo "cd mc && java -Xmx1G -jar ${EXEC_SERVER_NAME} nogui" > ../m.sh
+  echo "cd LocalMiner && java -Xmx1G -jar ${EXEC_SERVER_NAME} nogui" > ../m.sh
 fi
 chmod +x ../m.sh
 
@@ -82,5 +82,14 @@ if [ "$USE_NGROK" = "yes" ] ; then
   ./ngrok authtoken $AUTHTOKEN
 fi
 
-
-echo "STATUS: installation complete! Run ./m.sh here to start minecraft server, open a new session by swiping on the left, and run ./n.sh there to start ngrok"
+echo " "
+echo "-------------------------------------------------"
+echo "STATUS: installation complete!"
+echo "Run ./m.sh here to start minecraft server, "
+echo "open a new session by swiping on the left, "
+echo "and run ./n.sh there to start ngrok"
+echo "-------------------------------------------------"
+echo "L O C A L  M I N E R | H O S T  L O C A L L Y !"
+echo "                            Script By Healer-op"
+echo "-------------------------------------------------"
+echo " "
