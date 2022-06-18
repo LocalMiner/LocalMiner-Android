@@ -2,7 +2,7 @@
 🔴 Host Minecraft Java Edition Server From Your Android Phone!
 
 # Steps
-1. Download [Termux](https://www.apkmirror.com/apk/fredrik-fornwall/termux-fdroid-version/termux-fdroid-version-0-118-0-release/termux-fdroid-version-0-118-0-android-apk-download/download/) (not Google Play Store, that version is outdated and does not have openjdk-17 in Termux directly and have to go through Ubuntu)
+1. Download [Termux](https://droidbang.com/files10/59971_94f529/com.termux_118.apk) (not Google Play Store, that version is outdated and does not have openjdk-17 in Termux directly and have to go through Ubuntu)
 
 2.  run this
 ```
