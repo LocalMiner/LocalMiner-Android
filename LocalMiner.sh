@@ -31,7 +31,7 @@ USE_NGROK=${USE_NGROK:-yes}
 
 if [ "$USE_NGROK" = "yes" ] ; then
   read -p "ngrok authtoken (REQUIRED see https://dashboard.ngrok.com/get-started/your-authtoken): " AUTHTOKEN
-  read -p "ngrok region ([us]/eu/ap/au/sa/jp/in): " NGROK_REGION
+  read -p "ngrok region ([us]/eu/ap/au): " NGROK_REGION
   NGROK_REGION=${NGROK_REGION:-us}
 fi
 
@@ -76,7 +76,7 @@ chmod +x ../m.sh
 if [ "$USE_NGROK" = "yes" ] ; then
   echo "STATUS: setting up ngrok"
   cd ..
-  wget -O ngrok.zip https://github.com/LocalMiner/CloudLibrary/releases/download/1.0/ngrok.zip && unzip ngrok.zip && chmod +x ngrok
+  wget -O ngrok.zip https://bin.equinox.io/a/e93TBaoFgZw/ngrok-2.2.8-linux-arm.zip && unzip ngrok.zip && chmod +x ngrok
   echo "./ngrok tcp --region=$NGROK_REGION 25565" > n.sh
   chmod +x n.sh
   ./ngrok authtoken $AUTHTOKEN
