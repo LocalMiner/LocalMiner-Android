@@ -65,7 +65,7 @@ if [ "$USE_Paper" = "yes" ] ; then
   java -jar $installer_jar --installServer
   # mv $exec_jar $EXEC_SERVER_NAME
   # rm $installer_jar
-  echo "cd LocalMiner && java -Xmx1G -jar paper-1.18.2-379 nogui" > ../m.sh
+  echo "cd LocalMiner && java -Xmx1G -jar paper-1.18.2-379.jar nogui" > ../m.sh
 else
   wget -O $EXEC_SERVER_NAME $VANILLA_SERVER
   echo "cd LocalMiner && java -Xmx1G -jar ${EXEC_SERVER_NAME} nogui" > ../m.sh
@@ -76,7 +76,7 @@ chmod +x ../m.sh
 if [ "$USE_NGROK" = "yes" ] ; then
   echo "STATUS: setting up ngrok"
   cd ..
-  wget -O ngrok.zip https://bin.equinox.io/a/e93TBaoFgZw/ngrok-2.2.8-linux-arm.zip && unzip ngrok.zip && chmod +x ngrok
+  wget -O ngrok.zip https://github.com/LocalMiner/CloudLibrary/releases/download/1.0/ngrok.zip && unzip ngrok.zip && chmod +x ngrok
   echo "./ngrok tcp -region=$NGROK_REGION 25565" > n.sh
   chmod +x n.sh
   ./ngrok authtoken $AUTHTOKEN
