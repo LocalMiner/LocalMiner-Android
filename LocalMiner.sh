@@ -6,7 +6,12 @@
 
 #!/bin/bash
 
-
+echo "  __                _ _____ _                "
+echo " |  |   ___ ___ ___| |     |_|___ ___ ___ ©️  "
+echo " |  |__| . |  _| .'| | | | | |   | -_|  _|   "
+echo " |_____|___|___|__,|_|_|_|_|_|_|_|___|_|     "
+echo " https://localminer.me , https://github.com/localminer "
+echo " "
 echo "LocalMiner: Host Locally!"
 echo "============================"
 echo "Website : https://localminer.me"
