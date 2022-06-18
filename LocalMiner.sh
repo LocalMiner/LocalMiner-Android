@@ -65,7 +65,7 @@ if [ "$USE_Paper" = "yes" ] ; then
   java -jar $installer_jar --installServer
   # mv $exec_jar $EXEC_SERVER_NAME
   # rm $installer_jar
-  echo "cd mc && ./run.sh" > ../m.sh
+  echo "cd mc && java -Xmx1G -jar paper-1.18.2-379 nogui" > ../m.sh
 else
   wget -O $EXEC_SERVER_NAME $VANILLA_SERVER
   echo "cd mc && java -Xmx1G -jar ${EXEC_SERVER_NAME} nogui" > ../m.sh
