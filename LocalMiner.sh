@@ -51,7 +51,7 @@ EXEC_SERVER_NAME="minecraft_server.jar"
 
 ##### MINECRAFT/NGROK INSTALLATION #####
 
-pkg install openjdk-21 zip unzip -y
+pkg install openjdk-17 zip unzip -y
 
 # minecraft server download and setup
 echo "STATUS: setting up Minecraft Server"
