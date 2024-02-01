@@ -31,12 +31,12 @@ USE_NGROK=${USE_NGROK:-yes}
 
 if [ "$USE_NGROK" = "yes" ] ; then
   read -p "ngrok authtoken (REQUIRED see https://dashboard.ngrok.com/get-started/your-authtoken): " AUTHTOKEN
-  read -p "ngrok region ([us]/eu/ap/au): " NGROK_REGION
+  read -p "ngrok region ([us]/eu/ap/au/in): " NGROK_REGION
   NGROK_REGION=${NGROK_REGION:-us}
 fi
 
 # Paper server URL (1.18.1), update as necessary
-DEF_Paper_INSTALLER="https://api.papermc.io/v2/projects/paper/versions/1.18.2/builds/379/downloads/paper-1.18.2-379.jar"
+DEF_Paper_INSTALLER="https://api.papermc.io/v2/projects/paper/versions/1.20.4/builds/405/downloads/paper-1.20.4-405.jar"
 DEF_VANILLA_SERVER="https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar"
 if [ "$USE_Paper" = "yes" ] ; then
   read -p "Custom Paper installer (leave blank for default: $DEF_Paper_INSTALLER)? " Paper_SERVER
@@ -51,7 +51,7 @@ EXEC_SERVER_NAME="minecraft_server.jar"
 
 ##### MINECRAFT/NGROK INSTALLATION #####
 
-pkg install openjdk-17 zip unzip -y
+pkg install openjdk-21 zip unzip -y
 
 # minecraft server download and setup
 echo "STATUS: setting up Minecraft Server"
@@ -65,7 +65,7 @@ if [ "$USE_Paper" = "yes" ] ; then
   java -jar $installer_jar --installServer
   # mv $exec_jar $EXEC_SERVER_NAME
   # rm $installer_jar
-  echo "cd LocalMiner && java -Xmx1G -jar paper-1.18.2-379.jar nogui" > ../m.sh
+  echo "cd LocalMiner && java -Xmx1G -jar paper-1.20.4-405.jar nogui" > ../m.sh
 else
   wget -O $EXEC_SERVER_NAME $VANILLA_SERVER
   echo "cd LocalMiner && java -Xmx1G -jar ${EXEC_SERVER_NAME} nogui" > ../m.sh
@@ -76,7 +76,7 @@ chmod +x ../m.sh
 if [ "$USE_NGROK" = "yes" ] ; then
   echo "STATUS: setting up ngrok"
   cd ..
-  wget -O ngrok.zip https://bin.equinox.io/a/e93TBaoFgZw/ngrok-2.2.8-linux-arm.zip && unzip ngrok.zip && chmod +x ngrok
+  wget -O ngrok.tgz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm.tgz && unzip ngrok.tgz && chmod +x ngrok
   echo "./ngrok tcp --region=$NGROK_REGION 25565" > n.sh
   chmod +x n.sh
   ./ngrok authtoken $AUTHTOKEN
